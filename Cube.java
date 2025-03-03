@@ -47,7 +47,7 @@ public class Cube {
         Cube[row_i + 1][col_i + 2] = temp;
     }
 
-    public static void roatecounter(int row_i, int col_i) {
+    public static void rotatecounter(int row_i, int col_i) {
         rotateclockwise(row_i, col_i);
         rotateclockwise(row_i, col_i);
         rotateclockwise(row_i, col_i);        
@@ -59,27 +59,89 @@ public class Cube {
     }
 
     public static void moveUprime(){
-        roatecounter(0,3);
+        rotatecounter(0,3);
     }
 
+    public static void moveL(){
+        rotateclockwise(3, 0);
+    }
 
+    public static void moveLprime(){
+        rotatecounter(3, 0);
+    }
+
+    public static void moveF(){
+        rotateclockwise(3, 3);
+    }
+
+    public static void moveFprime(){
+        rotatecounter(3, 3);
+    }
+
+    public static void moveR(){
+        rotateclockwise(3, 6);
+    }
+
+    public static void moveRprime(){
+        rotatecounter(3,6);
+    }
+
+    public static void moveB(){
+        rotateclockwise(6, 3);
+    }
+
+    public static void moveBprime(){
+        rotatecounter(6, 3);
+    }
+
+    public static void moveD(){
+        rotateclockwise(9,3);
+    }
+
+    public static void moveDprime(){
+        rotatecounter(9, 3);
+    }
 
 
     //switch for the different moves
     public static void playMove(String move) {
         switch (move) {
-            case "U":   moveU();       break;
-            case "U'":  moveUprime();  break;
-            // case "L":   moveL();       break;
-            // case "L'":  moveLPrime();  break;
-            // case "F":   moveF();       break;
-            // case "F'":  moveFPrime();  break;
-            // case "R":   moveR();       break;
-            // case "R'":  moveRPrime();  break;
-            // case "B":   moveB();       break;
-            // case "B'":  moveBPrime();  break;
-            // case "D":   moveD();       break;
-            // case "D'":  moveDPrime();  break;
+            case "U":   
+                moveU();       
+                break;
+            case "U'":  
+                moveUprime();  
+                break;
+            case "L":   
+                moveL();       
+                break;
+            case "L'":  
+                moveLprime();  
+                break;
+            case "F":   
+                moveF();       
+                break;
+            case "F'":      
+                moveFprime();  
+                break;
+            case "R":       
+                moveR();       
+                break;
+            case "R'":  
+                moveRprime();  
+                break;
+            case "B":   
+                moveB();       
+                break;
+            case "B'":     
+                moveBprime();  
+                break;
+            case "D":   
+                moveD();       
+                break;
+            case "D'":  
+                moveDprime();  
+                break;
             default:
                 System.out.println("Invalid move: " + move);
         }
@@ -87,19 +149,30 @@ public class Cube {
 
     public static void main(String[] args) {
         
-    // default state
-    System.out.println("Cube's Current State: ");
-    printCube();
+    // // default state
+    // System.out.println("Cube's Default State: ");
+    // printCube();
 
-    // U move -- Up face rotates clockwise
-    System.out.println("\nU move:");
-    playMove("U");
-    printCube();
+    // // U move -- Up face rotates clockwise
+    // System.out.println("\nU move:");
+    // playMove("U");
+    // printCube();
 
     // U' move -- Up face rotates counter-clockwise
-    System.out.println("\nU' move:");
-    playMove("U'");
+    System.out.println("\nR move:");
+    playMove("R");
     printCube();
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
